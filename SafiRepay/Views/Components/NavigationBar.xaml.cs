@@ -1,5 +1,4 @@
-﻿using SafiRepay.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,25 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SafiRepay
+namespace SafiRepay.Views.Components
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour NavigationBar.xaml
     /// </summary>
-    public partial class AuthenticateWindow : Window
+    public partial class NavigationBar : UserControl
     {
-        public AuthenticateWindow()
+        public NavigationBar()
         {
             InitializeComponent();
-        }
-
-        private void Btn_Signin_Click(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("Clic sur le bouton");
-
-            ShellWindow mainWindow = new ShellWindow();
-            mainWindow.Show();
-            this.Close();
         }
     }
 }
