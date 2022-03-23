@@ -23,7 +23,14 @@
                 <ColumnDefinition Width="229*"></ColumnDefinition>
                 <ColumnDefinition Width="11*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-        <Image Grid.Row="1" Grid.Column="1" Source="/Assets/SAFI-Logo.png"/>
+        
+        <!-- Couleur de fond sur la partie gauche de la vue -->
+        <Border Grid.Row="0" Grid.Column="0"
+                Grid.RowSpan="3" Grid.ColumnSpan="3"
+                Background="SteelBlue"></Border>
+        
+        <!-- Logo -->
+        <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Source="/Assets/SAFI-Logo.png"/>
 
         <!-- Formulaire d'authentification -->
         <StackPanel Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" Margin="0,85,0,86">
