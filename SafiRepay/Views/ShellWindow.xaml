@@ -1,40 +1,100 @@
-﻿<Window x:Class="SafiRepay.Views.ShellWindow"
+﻿<mah:MetroWindow x:Class="SafiRepay.Views.ShellWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SafiRepay.Views"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"         
+        xmlns:views="clr-namespace:SafiRepay.Views"
         xmlns:components="clr-namespace:SafiRepay.Views.Components"
         mc:Ignorable="d"
         Title="SafuRepay - Gestion des frais" Height="450" Width="800"
         WindowState="Maximized">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.05*"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="0.05*"/>
-        </Grid.RowDefinitions>
+    
+    <mah:MetroWindow.Resources>
+        <!-- Design template for each item of the Hamburger menu -->
+        <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type mah:HamburgerMenuGlyphItem}">
+            <Grid Height="48">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <!-- Textblock for the icon odf the item menu : a glyph is a icon comming from a front -->
+                <TextBlock Grid.Column="0"
+                    FontSize="16"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe MDL2 Assets"
+                    Foreground="White"
+                    Text="{Binding Glyph}" />
+                <!-- TextBlock for the name of the item menu : it is called a label -->
+                <TextBlock Grid.Column="1"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Foreground="White"
+                    Text="{Binding Label}" />
+            </Grid>
+        </DataTemplate>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="0.1*"/>
-        </Grid.ColumnDefinitions>
-        
-        <!-- LOGO -->
-        <Image Grid.Row="1" Grid.Column="1" Source="/Assets/SAFI-Logo.png"/>
-        
-        
-        <!-- Barre de navigation -->
-        <components:NavigationBar Grid.Row="1" Grid.Column="2"/>
+    </mah:MetroWindow.Resources>
 
-        <!-- Hamburger Menu -->
-        <components:HamburgerMenu Grid.Row="2" Grid.Column="1"/>
-
-        <!-- Zone pour accueillir les vues pages -->
-        <Frame Grid.Row="2" Grid.Column="2" NavigationUIVisibility="Hidden"/>
+    <mah:HamburgerMenu x:Name="HamburgerMenuControl"
+                                       Foreground="White"
+                                       PaneBackground="#FF444444"
+                                       IsPaneOpen="False"
+                                       DisplayMode="CompactInline"
+                                       ItemTemplate="{StaticResource MenuItemTemplate}"
+                                       OptionsItemTemplate="{StaticResource MenuItemTemplate}"
+                                       ItemClick="HamburgerMenuControl_OnItemClick"
+                                       OptionsItemClick="HamburgerMenuControl_OnItemClick">
         
-    </Grid>
-</Window>
+        <!-- Items -->
+        <mah:HamburgerMenu.ItemsSource>
+            <mah:HamburgerMenuItemCollection>
+                
+                <mah:HamburgerMenuGlyphItem Glyph="T" Label="Tableau de bord">
+                    <mah:HamburgerMenuGlyphItem.Tag>
+                        <views:DashboardView/>
+                    </mah:HamburgerMenuGlyphItem.Tag>
+                </mah:HamburgerMenuGlyphItem>
+
+                <mah:HamburgerMenuGlyphItem Glyph="E" Label="Frais forfaitisés">
+                    <mah:HamburgerMenuGlyphItem.Tag>
+                        <views:ExpenseValidationView/>
+                    </mah:HamburgerMenuGlyphItem.Tag>
+                </mah:HamburgerMenuGlyphItem>
+
+            </mah:HamburgerMenuItemCollection>
+        </mah:HamburgerMenu.ItemsSource>
+        
+        <!-- Content : will receive the view to load and his title -->
+        <mah:HamburgerMenu.ContentTemplate>
+            <DataTemplate DataType="{x:Type mah:HamburgerMenuItem}">
+                <Grid x:Name="TheContentGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <!-- Border and textblock for the view title -->
+                    <Border Grid.Row="0"
+                    Background="#FF444444">
+                        <TextBlock x:Name="Header"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="24"
+                            Foreground="White"
+                            Text="{Binding Label}" />
+                    </Border>
+                    <!-- The view will be called here by the tag -->
+                    <Frame x:Name="TheContent"
+                            Grid.Row="1"
+                            Focusable="False"
+                            Foreground="#FF444444"
+                            Content="{Binding Tag}" />
+                </Grid>
+            </DataTemplate>
+        </mah:HamburgerMenu.ContentTemplate>
+    </mah:HamburgerMenu>
+    
+
+</mah:MetroWindow>

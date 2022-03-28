@@ -15,13 +15,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RestSharp;
 using SafiRepay.Models;
+using MahApps.Metro.Controls;
 
 namespace SafiRepay
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class AuthenticateWindow : Window
+    public partial class AuthenticateWindow : MetroWindow
     {
         public AuthenticateWindow()
         {
