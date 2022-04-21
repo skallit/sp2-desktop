@@ -35,20 +35,20 @@ namespace SafiRepay
 
         private void Btn_Signin_Click(object sender, RoutedEventArgs e)
         {
-            // Create an associative array with the email and the password
-            Dictionary<String, String> userCredentials = new Dictionary<string, string>();
-            userCredentials.Add("email", tbx_email.Text);
-            userCredentials.Add("password", pbx_pwd.Password);
+            String message = Login.Connect(tbx_email.Text, pbx_pwd.Password);
+            if (message == "Success")
+            {
+                // Call the ShellWindow view and close without verifying the credentials : TODO
+                ShellWindow mainWindow = new ShellWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                // Set the mesage for the user
+                tbx_message.Text = message;
+            }
 
-            // Call /login route to the API
-            IRestResponse response = Api.Post("login", userCredentials);
-
-            // Print the response content into the console
-            Console.WriteLine(response.Content);
-
-            ShellWindow mainWindow = new ShellWindow();
-            mainWindow.Show();
-            this.Close();
         }
     }
 }

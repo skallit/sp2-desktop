@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"         
         xmlns:views="clr-namespace:SafiRepay.Views"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:components="clr-namespace:SafiRepay.Views.Components"
         mc:Ignorable="d"
         Title="SafuRepay - Gestion des frais" Height="450" Width="800"
@@ -20,13 +21,11 @@
                 </Grid.ColumnDefinitions>
                 
                 <!-- Textblock for the icon odf the item menu : a glyph is a icon comming from a front -->
-                <TextBlock Grid.Column="0"
-                    FontSize="16"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontFamily="Segoe MDL2 Assets"
-                    Foreground="White"
-                    Text="{Binding Glyph}" />
+                <iconPacks:PackIconMaterial Kind="{Binding Glyph}" 
+                                            Grid.Column="0"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Focusable="True"/>
                 <!-- TextBlock for the name of the item menu : it is called a label -->
                 <TextBlock Grid.Column="1"
                     VerticalAlignment="Center"
@@ -52,15 +51,15 @@
         <mah:HamburgerMenu.ItemsSource>
             <mah:HamburgerMenuItemCollection>
                 
-                <mah:HamburgerMenuGlyphItem Glyph="T" Label="Tableau de bord">
+                <mah:HamburgerMenuGlyphItem Glyph="Home" Label="Tableau de bord">
                     <mah:HamburgerMenuGlyphItem.Tag>
                         <views:DashboardView/>
                     </mah:HamburgerMenuGlyphItem.Tag>
                 </mah:HamburgerMenuGlyphItem>
 
-                <mah:HamburgerMenuGlyphItem Glyph="E" Label="Frais forfaitisés">
+                <mah:HamburgerMenuGlyphItem Glyph="Purse" Label="Paramètrer les frais forfaitisés">
                     <mah:HamburgerMenuGlyphItem.Tag>
-                        <views:ExpenseValidationView/>
+                        <views:ExpenseSettingView/>
                     </mah:HamburgerMenuGlyphItem.Tag>
                 </mah:HamburgerMenuGlyphItem>
 

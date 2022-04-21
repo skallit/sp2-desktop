@@ -61,7 +61,7 @@ namespace SafiRepay.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à http://192.168.200.152:8000/api/.
+        ///   Recherche une chaîne localisée semblable à http://192.168.1.29:8000/api/.
         /// </summary>
         internal static string API_URL {
             get {
