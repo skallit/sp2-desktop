@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SafiRepay.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +20,12 @@ namespace SafiRepay.Views
     /// <summary>
     /// Logique d'interaction pour ExpenseValidationView.xaml
     /// </summary>
-    public partial class ExpenseValidationView : Page
+    public partial class ExpenseSettingView : Page
     {
-        public ExpenseValidationView()
+        public ExpenseSettingView()
         {
             InitializeComponent();
         }
+
     }
 }
