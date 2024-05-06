@@ -199,9 +199,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Api.cs" />
+    <Compile Include="Models\ExpenseInPackage.cs" />
+    <Compile Include="Models\ExpenseOutPackage.cs" />
     <Compile Include="Models\ExpensePackageType.cs" />
+    <Compile Include="Models\ExpenseSheet.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="ViewModels\ExpanseSettingViewModel.cs" />
+    <Compile Include="ViewModels\ExpenseInPackageViewModel.cs" />
+    <Compile Include="ViewModels\ExpenseOutPackageViewModel.cs" />
+    <Compile Include="ViewModels\ExpenseSheetValidationViewModel.cs" />
     <Compile Include="Views\Components\HamburgerMenu.xaml.cs">
       <DependentUpon>HamburgerMenu.xaml</DependentUpon>
     </Compile>
@@ -211,11 +218,23 @@
     <Compile Include="Views\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ExpenseInPackageView.xaml.cs">
+      <DependentUpon>ExpenseInPackageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExpenseOutPackageView.xaml.cs">
+      <DependentUpon>ExpenseOutPackageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExpenseSettingView.xaml.cs">
       <DependentUpon>ExpenseSettingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ExpenseSheetValidationView.xaml.cs">
+      <DependentUpon>ExpenseSheetValidationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellWindow.xaml.cs">
       <DependentUpon>ShellWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserView.xaml.cs">
+      <DependentUpon>UserView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\AuthenticateWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -230,22 +249,38 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Components\HamburgerMenu.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Components\NavigationBar.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\DashboardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ExpenseInPackageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ExpenseOutPackageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ExpenseSettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ExpenseSheetValidationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ShellWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

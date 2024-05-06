@@ -57,11 +57,36 @@
                     </mah:HamburgerMenuGlyphItem.Tag>
                 </mah:HamburgerMenuGlyphItem>
 
-                <mah:HamburgerMenuGlyphItem Glyph="Purse" Label="Paramètrer les frais forfaitisés">
+                <mah:HamburgerMenuGlyphItem Glyph="Purse" Label="Paramètrer frais forfaitisés">
                     <mah:HamburgerMenuGlyphItem.Tag>
                         <views:ExpenseSettingView/>
                     </mah:HamburgerMenuGlyphItem.Tag>
                 </mah:HamburgerMenuGlyphItem>
+
+                <mah:HamburgerMenuGlyphItem Glyph="Store" Label="Vérification fiche">
+                    <mah:HamburgerMenuGlyphItem.Tag>
+                        <views:ExpenseSheetValidationView/>
+                    </mah:HamburgerMenuGlyphItem.Tag>
+                </mah:HamburgerMenuGlyphItem>
+                
+                <mah:HamburgerMenuGlyphItem Glyph="Store" Label="Dépense frait forfaitaires">
+                    <mah:HamburgerMenuGlyphItem.Tag>
+                        <views:ExpenseInPackageView/>
+                    </mah:HamburgerMenuGlyphItem.Tag>
+                </mah:HamburgerMenuGlyphItem>
+
+                <mah:HamburgerMenuGlyphItem Glyph="Store" Label="Dépense frait non forfaitiser">
+                    <mah:HamburgerMenuGlyphItem.Tag>
+                        <views:ExpenseOutPackageView/>
+                    </mah:HamburgerMenuGlyphItem.Tag>
+                </mah:HamburgerMenuGlyphItem>
+
+                <mah:HamburgerMenuGlyphItem Glyph="Account" Label="Gestion utilisateur">
+                    <mah:HamburgerMenuGlyphItem.Tag>
+                        <views:UserView/>
+                    </mah:HamburgerMenuGlyphItem.Tag>
+                </mah:HamburgerMenuGlyphItem>
+
 
             </mah:HamburgerMenuItemCollection>
         </mah:HamburgerMenu.ItemsSource>
